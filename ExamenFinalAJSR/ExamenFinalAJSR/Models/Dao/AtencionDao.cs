@@ -71,5 +71,30 @@ namespace ExamenFinalAJSR.Models.Dao
 
             return list;
         }
+
+        public Boolean delete(int id)
+        {
+            Boolean result = false;
+            SqlCommand cmd = new SqlCommand();
+
+            try
+            {
+                //cmd.Parameters.Clear();
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.CommandText = "sp_delete_atencion";
+                //cmd.Parameters.AddWithValue("@IdCliente", product.id);
+                //cmd.Parameters.AddWithValue("@IdTipoAtencion", product.state);
+                //cmd.Parameters.AddWithValue("@state", product.state);
+                //cmd.Connection = DBConection.getConnection();
+                //cmd.ExecuteNonQuery();
+                result = true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return result;
+        }
     }
 }
