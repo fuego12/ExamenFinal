@@ -25,7 +25,7 @@ namespace ExamenFinalAJSR.Models.ConectDBEntity
         public string Apellido { get; set; }
         public int NumDocumento { get; set; }
         public string Estado { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbAtencionCliente> tbAtencionCliente { get; set; }
     }

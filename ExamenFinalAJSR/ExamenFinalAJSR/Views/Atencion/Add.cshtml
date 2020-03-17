@@ -1,0 +1,59 @@
+﻿@model ExamenFinalAJSR.Models.ConectDBEntity.tbAtencionCliente
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>tbAtencionCliente</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="IdTipoAtencion">IdTipoAtencion</label>
+        <div class="col-md-10">
+            <select id="idCliente" name="idCliente" class="form-control">
+                @foreach (var item in ViewBag.ListCliente)
+                {
+                    <option value="@item.IdCliente">@item.Nombre @item.Apellido</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="IdTipoAtencion">Tipo de atención</label>
+        <div class="col-md-10">
+            <select id="idCliente" name="idTipoAtencion" class="form-control">
+                @foreach (var item in ViewBag.ListTipoAtencion)
+                {
+                    <option value="@item.IdTipoAtencion">@item.Detalle</option>
+                }
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
